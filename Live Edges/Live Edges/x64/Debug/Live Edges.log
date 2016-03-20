@@ -1,7 +1,4 @@
 ﻿  Source.cpp
-f:\shape detection\live edges\live edges\source.cpp(88): warning C4101: 'side3': unreferenced local variable
-f:\shape detection\live edges\live edges\source.cpp(87): warning C4101: 'side2': unreferenced local variable
-f:\shape detection\live edges\live edges\source.cpp(89): warning C4101: 'side4': unreferenced local variable
-f:\shape detection\live edges\live edges\source.cpp(86): warning C4101: 'side1': unreferenced local variable
-f:\shape detection\live edges\live edges\source.cpp(90): warning C4101: 'area': unreferenced local variable
-  Live Edges.vcxproj -> F:\Shape detection\Live Edges\x64\Debug\Live Edges.exe
+c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Live Edges.vcxproj -> C:\Users\kmtompkins\Documents\GitHub\OpenCV_Live_Edges\Live Edges\x64\Debug\Live Edges.exe
