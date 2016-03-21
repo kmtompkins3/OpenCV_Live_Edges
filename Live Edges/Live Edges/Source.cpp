@@ -63,7 +63,7 @@ int main()
 		for (int i = 0; i < contours.size(); i++)//draws all contours
 		{
 			///drawContours(mat drawing, vector vector point, what contours to draw, color or contors,line thickness, line type, hierarchy, maxlevel ,offset
-			if (contours[i].size() >= 100)
+			if (contours[i].size() >= 80)
 			{
 				Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));//random color for each contour
 				drawContours(drawing, contours, i, color, 2, 8, hierarchy, 0, Point());//draws the contour image
@@ -73,7 +73,7 @@ int main()
 				contours.erase(contours.begin() + i);
 			}
 		}
-		imshow("Image with Contours", drawing);
+		//imshow("Image with Contours", drawing);
 
 		///Bonding box
 		try
