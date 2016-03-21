@@ -73,7 +73,7 @@ int main()
 				contours.erase(contours.begin() + i);
 			}
 		}
-		//imshow("Image with Contours", drawing);
+		imshow("Image with Contours", drawing);
 
 		///Bonding box
 		try
@@ -109,7 +109,7 @@ int main()
 			{
 				for (int x = 0; x < contours.size(); x++)
 				{
-					if (PointCompare(CenterPoints[i], CenterPoints[x]) && i != x)
+					if (PointCompare(CenterPoints[i], CenterPoints[x]) && i != x && hierarchy[i][2]>0)
 					{
 						circle(frame, (CenterPoints[i], CenterPoints[x]), 5, GREEN, 1, 8, 0);
 						circle(FinalOutput, (CenterPoints[i], CenterPoints[x]), 5, GREEN, 1, 8, 0);
