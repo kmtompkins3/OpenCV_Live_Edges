@@ -1,0 +1,7 @@
+﻿  Source.cpp
+Source.cpp(96): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+Source.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  All 416 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Live Edges.vcxproj -> C:\Users\kmtompkins\Documents\GitHub\OpenCV_Live_Edges\Live Edges\x64\Release\Live Edges.exe

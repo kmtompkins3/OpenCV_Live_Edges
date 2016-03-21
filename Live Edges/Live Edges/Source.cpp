@@ -42,20 +42,20 @@ int main()
 		///normal image
 		Mat frame;
 		cap >> frame;
-		imshow("Original Video", frame);
+		//imshow("Original Video", frame);
 
 		///GrayScale Image
 		Mat gray;
 		cap >> gray;
 		cvtColor(gray, gray, CV_BGR2GRAY);
-		imshow("GrayScale Image", gray);
+		//imshow("GrayScale Image", gray);
 
 		///Edge Detedction
 		Mat blur_gray;
 		Mat canny_gray;
 		blur(gray, blur_gray, Size(3, 3));
 		Canny(blur_gray, canny_gray, 40, 40 * 2, 3);
-		imshow("Edges", canny_gray);
+		//imshow("Edges", canny_gray);
 
 		///Contours
 		findContours(canny_gray, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
@@ -73,7 +73,7 @@ int main()
 				contours.erase(contours.begin() + i);
 			}
 		}
-		imshow("Image with Contours", drawing);
+		//imshow("Image with Contours", drawing);
 
 		///Bonding box
 		try
@@ -135,7 +135,7 @@ int main()
 					//if((Distance(rect_points[j].x, rect_points[j].y, rect_points[(j + 1) % 4].x, rect_points[(j + 1) % 4].y)) > .5)
 						//line(frame, rect_points[j], rect_points[(j + 1) % 4], GREEN, 1, 8);
 			}
-			imshow("Bounding retangle", frame);
+			//imshow("Bounding retangle", frame);
 		}
 		catch (...) {}
 		///Final Detection
