@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(96): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\kmtompkins\documents\github\opencv_live_edges\live edges\live edges\source.cpp(104): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Live Edges.vcxproj -> C:\Users\kmtompkins\Documents\GitHub\OpenCV_Live_Edges\Live Edges\x64\Debug\Live Edges.exe

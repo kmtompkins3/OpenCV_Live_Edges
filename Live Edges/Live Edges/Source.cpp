@@ -17,6 +17,7 @@ RNG rng(12345);
 Scalar RED(0, 0, 255);//BGR
 Scalar GREEN(0, 255, 0);
 Scalar WHITE(255, 255, 255);
+Scalar BLUE(255, 0, 0);
 
 
 VideoCapture cap(0); // open the default camera
@@ -28,11 +29,16 @@ bool PointCompare(Point2f point1, Point2f point2);
 
 int main()
 {
+
 	if (!cap.isOpened())  // check if we succeeded
 		return -1;
 
 	while (waitKey(100))
 	{
+		Mat FinalOutput;
+		cap >> FinalOutput;
+
+
 		///normal image
 		Mat frame;
 		cap >> frame;
@@ -57,10 +63,14 @@ int main()
 		for (int i = 0; i < contours.size(); i++)//draws all contours
 		{
 			///drawContours(mat drawing, vector vector point, what contours to draw, color or contors,line thickness, line type, hierarchy, maxlevel ,offset
-			if (contours[i].size() >= 30)
+			if (contours[i].size() >= 100)
 			{
 				Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));//random color for each contour
 				drawContours(drawing, contours, i, color, 2, 8, hierarchy, 0, Point());//draws the contour image
+			}
+			else
+			{
+				contours.erase(contours.begin() + i);
 			}
 		}
 		imshow("Image with Contours", drawing);
@@ -81,14 +91,14 @@ int main()
 			}
 			for (int i = 0; i < contours.size(); i++)
 			{
-				if (boundRect[i].area() > 1000)
+				if (boundRect[i].area() > 1500)
 				{
 					CenterPoints[i] = Point2f((boundRect[i].width / 2) + boundRect[i].x, (boundRect[i].height / 2) + boundRect[i].y);
 				}
 			}
 			for (int i = 0; i < contours.size(); i++)
 			{
-				if (boundRect[i].area() > 1000)
+				if (boundRect[i].area() > 1500)
 				{
 					rectangle(frame, boundRect[i].tl(), boundRect[i].br(), RED, 2, 8, 0);
 					circle(frame, Point2f((boundRect[i].width/2)+ boundRect[i].x,(boundRect[i].height/2)+ boundRect[i].y), 5, WHITE, 1, 8, 0);
@@ -102,6 +112,11 @@ int main()
 					if (PointCompare(CenterPoints[i], CenterPoints[x]) && i != x)
 					{
 						circle(frame, (CenterPoints[i], CenterPoints[x]), 5, GREEN, 1, 8, 0);
+						circle(FinalOutput, (CenterPoints[i], CenterPoints[x]), 5, GREEN, 1, 8, 0);
+						if (boundRect[i].area() > 1500)
+						{
+							rectangle(FinalOutput, boundRect[i].tl(), boundRect[i].br(), BLUE, 2, 8, 0);
+						}
 					}
 				}
 			}
@@ -123,6 +138,10 @@ int main()
 			imshow("Bounding retangle", frame);
 		}
 		catch (...) {}
+		///Final Detection
+		imshow("FinalOutput", FinalOutput);
+		
+
 	}
 	cout << "out of loop" << endl;
 }
